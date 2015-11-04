@@ -39,32 +39,27 @@
 		</div>
 	</div>
 	<div class="templates hidden">
-		<dl class="result question">
-			<dt>Question</dt>
-				<dd class="question-text"><a href="" target="_blank"></a></dd>
-			<dt>Asked</dt>
-				<dd class="asked-date"></dd>
-			<dt>Viewed</dt>
-				<dd class="viewed"></dd>
-			<dt>Asker</dt>
-				<dd class="asker"></dd>
-		</dl>
-		<!--<dl class="result answerers">
-			<dt>Answerer Name</dt>
-				<dd class="answerer-name"><a href="" target="_blank"></a></dd>
-			<dt>Id</dt>
-				<dd class="answerer-id"></dd>
-			<dt>User Type</dt>
-				<dd class="answerer-type"></dd>
-			<dt>User Score</dt>
-				<dd class="answerer-score"></dd>
-			<dt>Reputation</dt>
-				<dd class="answerer-rep"></dd>
-		</dl>-->
-		<div id="results-template">
+		<div id="questions-template">
+			<dl class="result question">
+				<dt>Question</dt>
+					<dd><a href="{{link}}" target="_blank">{{title}}</a></dd>
+				<dt>Asked</dt>
+					<dd>{{date}}</dd>
+				<dt>Viewed</dt>
+					<dd>{{view_count}}</dd>
+				<dt>Asker</dt>
+					<dd>
+						<p>Name: <a target="_blank" href="http://stackoverflow.com/users/ {{question.owner.user_id}}">
+							{{owner.display_name}}</a>
+						</p>
+						<p>Reputation: {{owner.reputation}} </p>
+					</dd>
+			</dl>
+		</div>
+		<div id="answerer-template">
 			<dl class="result answerers">
 				<dt>Answerer Name</dt>
-					<dd><a href="" target="_blank">{{user.display_name}}</a></dd>
+					<dd><a href="{{user.link}}" target="_blank">{{user.display_name}}</a></dd>
 				<dt>Id</dt>
 					<dd>{{user.user_id}}</dd>
 				<dt>User Type</dt>
