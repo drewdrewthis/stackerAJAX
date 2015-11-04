@@ -51,37 +51,6 @@ var showQuestion = function(question) {
 	return result;
 };
 
-// this function takes the question object returned by StackOverflow 
-// and creates new result to be appended to DOM
-var showAnswerer = function(answerer) {
-
-	// clone our result template code
-	var result = $('.templates .answerers').clone();
-	
-	// Set the answerer properties in result
-	var answererElem = result.find('.answerer-name a');
-	answererElem.attr('href', answerer.user.link);
-	answererElem.text(answerer.user.display_name);
-
-	// set the answerer id in result
-	var viewed = result.find('.answerer-id');
-	viewed.text(answerer.user.user_id);
-
-	// set the answerer type in result
-	var viewed = result.find('.answerer-type');
-	viewed.text(answerer.user.user_type);
-
-	// set the answerer score in result
-	var viewed = result.find('.answerer-score');
-	viewed.text(answerer.score);
-
-	// set the answerer reputation in result
-	var viewed = result.find('.answerer-rep');
-	viewed.text(answerer.user.reputation);
-
-	return result;
-};
-
 
 // this function takes the results object from StackOverflow
 // and creates info about search results to be appended to DOM
@@ -146,19 +115,15 @@ var getAnswerers = function(tag) {
 		$('.search-results').html(searchResults);
 
 		$.each(result.items, function(i, item) {
-			//var answerer = showAnswerer(item);
-			//$('.results').append(answerer);
 
-			var template = document.getElementById('results-template').innerHTML;
-
-			var output = Mustache.render(template,item);
+			var template = document.getElementById('results-template').innerHTML,
+				output = Mustache.render(template,item);
 
 			$('.results').append(output);
 
-			console.log(output);
 		});
 
-		//console.log(result.items);
+		console.log(result.items);
 		
 	})
 	.fail(function(jqXHR, error, errorThrown){
