@@ -61,18 +61,20 @@
 			<dt>Reputation</dt>
 				<dd class="answerer-rep"></dd>
 		</dl>-->
-		<dl id="results-template" class="result answerers">
-			<dt>Answerer Name</dt>
-				<dd><a href="" target="_blank">{{user.display_name}}</a></dd>
-			<dt>Id</dt>
-				<dd>{{user.user_id}}</dd>
-			<dt>User Type</dt>
-				<dd>{{user.user_type}}</dd>
-			<dt>User Score</dt>
-				<dd>{{score}}</dd>
-			<dt>Reputation</dt>
-				<dd>{{user.reputation}}</dd>
-		</dl>
+		<div id="results-template">
+			<dl class="result answerers">
+				<dt>Answerer Name</dt>
+					<dd><a href="" target="_blank">{{user.display_name}}</a></dd>
+				<dt>Id</dt>
+					<dd>{{user.user_id}}</dd>
+				<dt>User Type</dt>
+					<dd>{{user.user_type}}</dd>
+				<dt>User Score</dt>
+					<dd>{{score}}</dd>
+				<dt>Reputation</dt>
+					<dd>{{user.reputation}}</dd>
+			</dl>
+		</div>
 		<div class="error">
 			<p>Uh-oh! Something went wrong with your request. Here's what we know:</p>
 		</div>

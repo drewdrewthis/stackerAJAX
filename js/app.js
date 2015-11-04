@@ -153,6 +153,8 @@ var getAnswerers = function(tag) {
 
 			var output = Mustache.render(template,item);
 
+			$('.results').append(output);
+
 			console.log(output);
 		});
 
