@@ -39,40 +39,6 @@
 		</div>
 	</div>
 	<div class="templates hidden">
-		<div id="questions-template">
-			<dl class="result question">
-				<dt>Question</dt>
-					<dd><a href="{{link}}" target="_blank">{{title}}</a></dd>
-				<dt>Asked</dt>
-					<dd>{{date}}</dd>
-				<dt>Viewed</dt>
-					<dd>{{view_count}}</dd>
-				<dt>Asker</dt>
-					<dd>
-						<p>Name: <a target="_blank" href="http://stackoverflow.com/users/ {{question.owner.user_id}}">
-							{{owner.display_name}}</a>
-						</p>
-						<p>Reputation: {{owner.reputation}} </p>
-					</dd>
-			</dl>
-		</div>
-		<div id="answerer-template">
-			<dl class="result answerers">
-				<dt>Answerer Name</dt>
-					<dd><a href="{{user.link}}" target="_blank">{{user.display_name}}</a></dd>
-				<dt>Id</dt>
-					<dd>{{user.user_id}}</dd>
-				<dt>User Type</dt>
-					<dd>{{user.user_type}}</dd>
-				<dt>User Score</dt>
-					<dd>{{score}}</dd>
-				<dt>Reputation</dt>
-					<dd>{{user.reputation}}</dd>
-			</dl>
-		</div>
-		<div class="error">
-			<p>Uh-oh! Something went wrong with your request. Here's what we know:</p>
-		</div>
 	</div>
 </body>
 </html>

@@ -1,4 +1,7 @@
 $(document).ready( function() {
+	
+	$(".templates").load("templates.html");
+
 	$('.unanswered-getter').submit( function(event){
 		// zero out results if previous search has run
 		$('.results').html('');
