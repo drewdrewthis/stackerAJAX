@@ -54,7 +54,7 @@ var showQuestion = function(question) {
 // this function takes the question object returned by StackOverflow 
 // and creates new result to be appended to DOM
 var showAnswerer = function(answerer) {
-	
+
 	// clone our result template code
 	var result = $('.templates .answerers').clone();
 	
@@ -146,10 +146,17 @@ var getAnswerers = function(tag) {
 		$('.search-results').html(searchResults);
 
 		$.each(result.items, function(i, item) {
-			var answerer = showAnswerer(item);
-			$('.results').append(answerer);	
+			//var answerer = showAnswerer(item);
+			//$('.results').append(answerer);
+
+			var template = document.getElementById('results-template').innerHTML;
+
+			var output = Mustache.render(template,item);
+
+			console.log(output);
 		});
-		console.log(result.items);
+
+		//console.log(result.items);
 		
 	})
 	.fail(function(jqXHR, error, errorThrown){
