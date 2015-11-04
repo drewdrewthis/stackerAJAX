@@ -58,10 +58,26 @@ var showAnswerer = function(answerer) {
 	// clone our result template code
 	var result = $('.templates .answerers').clone();
 	
-	// Set the question properties in result
+	// Set the answerer properties in result
 	var answererElem = result.find('.answerer-name a');
 	answererElem.attr('href', answerer.user.link);
 	answererElem.text(answerer.user.display_name);
+
+	// set the answerer id in result
+	var viewed = result.find('.answerer-id');
+	viewed.text(answerer.user.user_id);
+
+	// set the answerer type in result
+	var viewed = result.find('.answerer-type');
+	viewed.text(answerer.user.user_type);
+
+	// set the answerer score in result
+	var viewed = result.find('.answerer-score');
+	viewed.text(answerer.score);
+
+	// set the answerer reputation in result
+	var viewed = result.find('.answerer-rep');
+	viewed.text(answerer.user.reputation);
 
 	return result;
 };
